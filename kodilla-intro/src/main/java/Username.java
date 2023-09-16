@@ -8,12 +8,16 @@ public class Username {
         this.age = age;
         this.height = height;
     }
+    public String userValidation(Username user) {
+        if (user.age > 30 && user.height > 160) {
+            return "User is older than 30 and taller than 160cm";
+        } else {
+            return "User is 30 (or younger) or 160cm (or shorter)";
+        }
+    }
     public static void main(String[] args) {
         Username user = new Username("Adam", 40.5, 178);
-        if (user.age > 30 && user.height > 160) {
-            System.out.println("User is older than 30 and taller than 160cm");
-        } else {
-            System.out.println("User is 30 (or younger) or 160cm (or shorter)");
-        }
+        String validation = user.userValidation(user);
+        System.out.println(validation);
     }
 }
