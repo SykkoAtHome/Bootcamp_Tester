@@ -9,7 +9,7 @@ public class CalculatorTestSuite {
         double a = 5.9;
         double b = 4.1;
         double sumResult = calculator.sum(a, b);
-        assertEquals(10, sumResult);
+        assertEquals(10, sumResult, .0001);
     }
     @Test
     public void testSub() {
@@ -17,7 +17,7 @@ public class CalculatorTestSuite {
         double a = 5.9;
         double b = 8.9;
         double sumResult = calculator.sub(a, b);
-        assertEquals(-3, sumResult);
+        assertEquals(-3, sumResult, .0001);
     }
     @Test
     public void testSquare() {
