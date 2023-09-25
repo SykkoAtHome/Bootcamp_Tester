@@ -25,5 +25,14 @@ public class CalculatorTestSuite {
         double a = 5.4;
         double sumResult = calculator.square(a);
         assertEquals(29.16, sumResult, .0001);
+
+        a = 0;
+        sumResult = calculator.square(a);
+        assertEquals(0, sumResult, .0001);
+
+        a = -5;
+        sumResult = calculator.square(a);
+        assertEquals(25, sumResult, .0001);
+
     }
 }
