@@ -5,9 +5,9 @@ public class Application {
         Calculator calculator = new Calculator();
         int a = 5;
         int b = 8;
-        int sumResult = calculator.sum(a, b);
-        int subResult = calculator.sub(a, b);
-        int squareResult = calculator.square(a);
+        double sumResult = calculator.sum(a, b);
+        double subResult = calculator.sub(a, b);
+        double squareResult = calculator.square(a);
         boolean correct = ResultChecker.assertEquals(13, sumResult);
         if (correct) {
             System.out.println("Metoda sum działa poprawnie dla liczb " + a + " i " + b);
