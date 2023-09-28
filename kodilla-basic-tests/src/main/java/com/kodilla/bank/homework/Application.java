@@ -24,14 +24,12 @@ public class Application {
         euroNet.processTransaction(deposit2);
         euroNet.processTransaction(deposit3);
 
-
         planetCash.processTransaction(withdraw1);
-        planetCash.processTransaction(withdraw2);
+        planetCash.processTransaction(withdraw1);
         planetCash.processTransaction(withdraw3);
-        planetCash.processTransaction(deposit1);
+        planetCash.processTransaction(deposit3);
         planetCash.processTransaction(deposit2);
         planetCash.processTransaction(deposit3);
-
 
         System.out.println("Total CashMachines balance: " + bank.getTotalBalance());
         System.out.println("Withdraw Total Count: " + bank.getTotalWithdrawCount());

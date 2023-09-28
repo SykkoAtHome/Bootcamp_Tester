@@ -17,9 +17,11 @@ public class CashMachine {
         int amount = transaction.getAmount();
         if (amount > 0) {
             deposit(amount);
+            this.depositCount++;
             addHistory(transaction);
-        } else if (amount < 0) {
+        } else if (amount < 0 && -amount <= this.balance) {
             withdraw(-amount);
+            this.withdrawCount++;
             addHistory(transaction);
         }
     }
@@ -37,13 +39,9 @@ public class CashMachine {
     }
     private void deposit(int amount) {
         this.balance += amount;
-        this.depositCount++;
     }
     private void withdraw(int amount) {
-        if (amount <= getBalance()) {
-            this.balance -= amount;
-            this.withdrawCount++;
-        }
+        this.balance -= amount;
     }
     public int getWithdrawCount() {
         return withdrawCount;
