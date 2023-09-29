@@ -8,15 +8,14 @@ public class BankTestSuite {
     @Test
     public void testAddCashMachine() {
         Bank bank = new Bank();
-        CashMachine euroNet = new CashMachine(10000);
-        CashMachine planetCash = new CashMachine(10000);
-
-        assertEquals(0, bank.getCashMachines().length);
-
+        CashMachine euroNet = new CashMachine(100);
+        CashMachine planetCash = new CashMachine(100);
+        assertEquals(0,bank.getTotalBalance());
         bank.addCashMachine(euroNet);
+        assertEquals(100,bank.getTotalBalance());
         bank.addCashMachine(planetCash);
+        assertEquals(200,bank.getTotalBalance());
 
-        assertEquals(2, bank.getCashMachines().length);
     }
     @Test
     public void testTotalBalance() {

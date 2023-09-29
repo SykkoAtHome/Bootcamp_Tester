@@ -58,7 +58,7 @@ public class Bank {
         }
         return (double) totalDepositAmount / totalDepositCount;
     }
-    public CashMachine[] getCashMachines() {
-        return cashMachines;
-    }
+//    public CashMachine[] getCashMachines() {
+//        return cashMachines;
+//    }
 }
