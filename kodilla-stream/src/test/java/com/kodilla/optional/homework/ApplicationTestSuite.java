@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.kodilla.optional.homework.Application.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ApplicationTestSuite {
@@ -43,5 +44,21 @@ public class ApplicationTestSuite {
         studentList.add(new Student("Zbysio", kowalski));
 
         assertEquals(6, studentList.size());
+    }
+
+    @Test
+    public void testReturnAlternativeNameWhenNull() {
+        Student testStudent = new Student("test", null);
+        String teacherName = getTeacherNameOrAlternative(testStudent);
+
+        assertEquals("<undefined>", teacherName);
+    }
+    @Test
+    public void testReturnTeacherName() {
+        Teacher testTeacher = new Teacher("Teacher");
+        Student testStudent = new Student("test", testTeacher);
+        String teacherName = getTeacherNameOrAlternative(testStudent);
+
+        assertEquals("Teacher", teacherName);
     }
 }

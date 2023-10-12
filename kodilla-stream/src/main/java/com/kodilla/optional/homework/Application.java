@@ -19,13 +19,15 @@ public class Application {
         studentList.add(new Student("Zbysio", kowalski));
 
         for (Student student : studentList) {
-            Optional<Teacher> optionalTeacher = Optional.ofNullable(student.getTeacher());
-
-            String teacherName = optionalTeacher
-                    .map(Teacher::getName)
-                    .orElse("<undefined>");
-
-            System.out.println("Student: " +student.getName() + " Teacher: " +teacherName);
+            String teacherName = getTeacherNameOrAlternative(student);
+            System.out.println("Student: " + student.getName() + " Teacher: " + teacherName);
         }
+
+    }
+    public static String getTeacherNameOrAlternative(Student student) {
+        Optional<Teacher> optionalTeacher = Optional.ofNullable(student.getTeacher());
+        return optionalTeacher
+                .map(Teacher::getName)
+                .orElse("<undefined>");
     }
 }
