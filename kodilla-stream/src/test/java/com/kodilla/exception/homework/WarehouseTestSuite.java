@@ -14,5 +14,4 @@ class WarehouseTestSuite {
         // then
         assertThrows(OrderDoesntExistException.class, () -> warehouse.getOrder("666"));
     }
-
 }
