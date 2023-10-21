@@ -96,6 +96,19 @@ class AlertServiceTest {
         alertService.sendAlertToAll("Ostatni gasi swiatlo");
 
         Mockito.verify(obajtek, Mockito.times(1)).receive(Mockito.any(Alert.class));
-        Mockito.verify(suski, Mockito.never()).receive(Mockito.any(Alert.class));
+        Mockito.verify(suski, Mockito.times(1)).receive(Mockito.any(Alert.class));
+    }
+    @Test
+    public void testAddUser() {
+        alertService.subscribeToLocation(obajtek, gdansk);
+        alertService.subscribeToLocation(suski, pcim);
+
+        alertService.deleteLocation(gdansk);
+        alertService.deleteLocation(pcim);
+
+        alertService.sendAlertToAll("Alert");
+
+        Mockito.verify(obajtek, Mockito.times(1)).receive(Mockito.any(Alert.class));
+        Mockito.verify(suski, Mockito.times(1)).receive(Mockito.any(Alert.class));
     }
 }
