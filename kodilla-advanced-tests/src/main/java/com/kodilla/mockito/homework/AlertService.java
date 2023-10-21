@@ -5,6 +5,7 @@ import java.util.*;
 
 public class AlertService {
     private Map<Location, Set<User>> subscriptions = new HashMap<>();
+    private Set<User> allUsers = new HashSet<>();
 
     public void subscribeToLocation(User user, Location location) {
         if (user == null || location == null) {
@@ -12,6 +13,7 @@ public class AlertService {
         }
         subscriptions.putIfAbsent(location, new HashSet<>());
         subscriptions.get(location).add(user);
+        addUser(user);
     }
 
     public void sendAlert(Location location, String alert) {
@@ -51,7 +53,7 @@ public class AlertService {
     }
 
     public void sendAlertToAll(String alert) {
-        Set<User> uniqueSubscribers = new HashSet<>();
+        Set<User> uniqueSubscribers = new HashSet<>(allUsers);
         for (Location location : subscriptions.keySet()) {
             uniqueSubscribers.addAll(subscriptions.get(location));
         }
@@ -67,6 +69,11 @@ public class AlertService {
         subscriptions.remove(location);
     }
 
+    public void addUser(User user) {
+        if (!allUsers.contains(user)) {
+            allUsers.add(user);
+        }
+    }
     public void clearAllData() {
         subscriptions.clear();
     }
