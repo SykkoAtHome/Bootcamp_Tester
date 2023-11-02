@@ -22,7 +22,6 @@ class AlertServiceTest {
         alertService.clearAllData();
     }
 
-
     @Test
     public void subscribeToLocationShouldReceiveAlert() {
         alertService.subscribeToLocation(obajtek, pcim);
