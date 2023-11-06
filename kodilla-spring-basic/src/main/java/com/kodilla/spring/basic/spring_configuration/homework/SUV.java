@@ -7,11 +7,8 @@ import java.time.LocalTime;
 public class SUV implements Car {
     @Override
     public boolean hasHeadlightsTurnedOn(LocalDateTime dateTime) {
-        LocalTime sunsetTime = LocalTime.of(20, 0);
-        LocalTime sunriseTime = LocalTime.of(6, 0);
-        LocalTime currentTime = dateTime.toLocalTime();
-        return (currentTime.isAfter(sunsetTime) || currentTime.equals(sunsetTime))
-                && (currentTime.isBefore(sunriseTime) || currentTime.equals(sunriseTime));
+        int hour = dateTime.getHour();
+        return hour < 6 || hour >= 20;
     }
 
     @Override

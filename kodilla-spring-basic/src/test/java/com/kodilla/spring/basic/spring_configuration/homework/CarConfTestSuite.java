@@ -42,10 +42,94 @@ class CarConfTestSuite {
         }
     }
     @Test
-    public void shouldTurnOnHeadlightsAtNight() {
+    public void shouldTurnOnHeadlightsAtNightForCabrio() {
         // given
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_configuration.homework");
         LocalDateTime dateTime = LocalDateTime.of(2023, 7, 12, 0, 0, 0);  // Inicjalizujemy na północy
+
+        boolean[] expectedResults = {
+                true,  // 00:00
+                true,  // 01:00
+                true,  // 02:00
+                true,  // 03:00
+                true,  // 04:00
+                true,  // 05:00
+                false,  // 06:00
+                false,  // 07:00
+                false,  // 08:00
+                false,  // 09:00
+                false,  // 10:00
+                false,  // 11:00
+                false,  // 12:00
+                false,  // 13:00
+                false,  // 14:00
+                false,  // 15:00
+                false,  // 16:00
+                false,  // 17:00
+                false,  // 18:00
+                false,  // 19:00
+                true,  // 20:00
+                true,  // 21:00
+                true,  // 22:00
+                true  // 23:00
+        };
+
+        // when
+        // then
+        for (int i = 0; i < 24; i++) {
+            Car car = (Car) context.getBean("carToUse", dateTime);
+            assertEquals(expectedResults[i], car.hasHeadlightsTurnedOn(dateTime));
+            //System.out.println(i);
+            dateTime = dateTime.plusHours(1);
+        }
+    }
+    @Test
+    public void shouldTurnOnHeadlightsAtNightForSUV() {
+        // given
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_configuration.homework");
+        LocalDateTime dateTime = LocalDateTime.of(2023, 12, 12, 0, 0, 0);  // Inicjalizujemy na północy
+
+        boolean[] expectedResults = {
+                true,  // 00:00
+                true,  // 01:00
+                true,  // 02:00
+                true,  // 03:00
+                true,  // 04:00
+                true,  // 05:00
+                false,  // 06:00
+                false,  // 07:00
+                false,  // 08:00
+                false,  // 09:00
+                false,  // 10:00
+                false,  // 11:00
+                false,  // 12:00
+                false,  // 13:00
+                false,  // 14:00
+                false,  // 15:00
+                false,  // 16:00
+                false,  // 17:00
+                false,  // 18:00
+                false,  // 19:00
+                true,  // 20:00
+                true,  // 21:00
+                true,  // 22:00
+                true  // 23:00
+        };
+
+        // when
+        // then
+        for (int i = 0; i < 24; i++) {
+            Car car = (Car) context.getBean("carToUse", dateTime);
+            assertEquals(expectedResults[i], car.hasHeadlightsTurnedOn(dateTime));
+            //System.out.println(i);
+            dateTime = dateTime.plusHours(1);
+        }
+    }
+    @Test
+    public void shouldTurnOnHeadlightsAtNightForSedan() {
+        // given
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_configuration.homework");
+        LocalDateTime dateTime = LocalDateTime.of(2023, 11, 12, 0, 0, 0);  // Inicjalizujemy na północy
 
         boolean[] expectedResults = {
                 true,  // 00:00
