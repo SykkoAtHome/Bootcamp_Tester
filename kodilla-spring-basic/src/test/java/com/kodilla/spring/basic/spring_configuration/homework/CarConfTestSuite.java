@@ -87,7 +87,7 @@ class CarConfTestSuite {
     public void shouldTurnOnHeadlightsAtNightForSUV() {
         // given
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_configuration.homework");
-        LocalDateTime dateTime = LocalDateTime.of(2023, 12, 12, 0, 0, 0);  // Inicjalizujemy na północy
+        LocalDateTime dateTime = LocalDateTime.of(2023, 12, 12, 0, 0, 0);
 
         boolean[] expectedResults = {
                 true,  // 00:00
