@@ -57,7 +57,7 @@ class BookControllerRestAssuredTest {
     }
 
     @Test
-    void testAddBook() {
+    void testAddBookResponse200() {
         BookDto bookDto = new BookDto("Lord of the rings", "J.R.R. Tolkien");
 
         given()
@@ -68,6 +68,5 @@ class BookControllerRestAssuredTest {
                 .then()
                 .assertThat()
                 .statusCode(200);
-
     }
 }
