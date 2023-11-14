@@ -11,6 +11,9 @@ public class BookDto {
         this.title = title;
         this.author = author;
     }
+    public BookDto() {
+
+    }
 
     public String getTitle() { return title; }
 
