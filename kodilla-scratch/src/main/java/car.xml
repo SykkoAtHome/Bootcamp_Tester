@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<car xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:noNamespaceSchemaLocation="car.xsd">
+    <manufacturer>Mazda</manufacturer>
+    <model>6</model>
+    <year>2022</year>
+    <color>Deep Blue</color>
+    <engine>
+        <type>Gasoline</type>
+        <capacity>2.5</capacity>
+    </engine>
+    <transmission>AT</transmission>
+    <options>
+        <option>AC</option>
+        <option>Power Windows</option>
+        <option>Bluetooth</option>
+        <option>Leather Seats</option>
+        <option>Bi-Xenon</option>
+    </options>
+</car>
