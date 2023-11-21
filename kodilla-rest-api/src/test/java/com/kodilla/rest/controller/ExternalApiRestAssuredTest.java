@@ -15,15 +15,15 @@ class ExternalApiRestAssuredTest {
         given().  // [1]
                 header("Content-Type", "application/json").
                 when().
-                get("https://jsonplaceholder.typicode.com/posts/1").  // [2]
+                get("https://jsonplaceholder.typicode.com/posts/1").
                 then().
                 assertThat().
-                statusCode(200).  //  [3]
-                body("userId", equalTo(1)).  //  [4]
+                statusCode(200).
+                body("userId", equalTo(1)).
                 body("id", equalTo(1)).
                 body("title", equalTo("sunt aut facere repellat provident occaecati excepturi optio reprehenderit")).
                 body("body", equalTo("quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto")).
-                log().all();  // [5]
+                log().all();
     }
 
     @Test
@@ -44,15 +44,5 @@ class ExternalApiRestAssuredTest {
                 body("title", equalTo("New Title")).
                 body("body", equalTo("Lorem ipsum")).
                 log().all();
-//        given().
-//                when().
-//                get("https://jsonplaceholder.typicode.com/posts/1").
-//                then().
-//                assertThat().
-//                statusCode(200).
-//                body("title", equalTo("New Title")).
-//                body("body", equalTo("Lorem ipsum")).
-//                log().all();
-
     }
 }
