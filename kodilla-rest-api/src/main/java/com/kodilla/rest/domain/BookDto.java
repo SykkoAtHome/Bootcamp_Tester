@@ -12,7 +12,6 @@ public class BookDto {
         this.author = author;
     }
     public BookDto() {
-
     }
 
     public String getTitle() { return title; }
