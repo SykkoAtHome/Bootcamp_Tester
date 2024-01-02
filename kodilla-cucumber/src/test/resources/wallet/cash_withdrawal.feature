@@ -13,4 +13,4 @@ Feature: Cash Withdrawal
       | 0     | 0      | 0    | 0       | "You can't withdraw zero amount"     |
       | 90    | 100    | 0    | 90      | "Not enough money"                   |
       | -100  | 100    | 0    | 0       | "You can't deposit negative values"  |
-      | 100   | -100   | 0    | 100     | "You can't withdraw negative amount" |
+      | 100   | -100   | 0    | 1o00    | "You can't withdraw negative amount" |
