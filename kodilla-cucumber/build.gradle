@@ -17,7 +17,7 @@ test {
     useJUnitPlatform()
 }
 
-task cucumber(type: Test) {
+tasks.register('cucumber', Test) {
     useJUnitPlatform()
     testLogging {
         events("passed", "skipped", "failed")
