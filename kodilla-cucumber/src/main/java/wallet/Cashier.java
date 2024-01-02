@@ -8,7 +8,11 @@ public class Cashier {
     }
 
     public void withdraw(Wallet wallet, int amount) {
-        wallet.debit(amount);
-        cashSlot.dispense(wallet.getCashToDispense());
+        if (wallet.getWalletMassage().equals("You can't deposit negative values")) {
+            cashSlot.dispense(0);
+        } else {
+            wallet.debit(amount);
+            cashSlot.dispense(wallet.getCashToDispense());
+        }
     }
 }

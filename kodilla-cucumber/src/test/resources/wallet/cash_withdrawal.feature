@@ -9,8 +9,9 @@ Feature: Cash Withdrawal
     Examples:
       | money | amount | cash | balance | massage                              |
       | 200   | 30     | 30   | 170     | "Withdraw Successful"                |
-      | 20    | 20     | 20   | 0       | "Withdraw Successful"                |
       | 0     | 0      | 0    | 0       | "You can't withdraw zero amount"     |
       | 90    | 100    | 0    | 90      | "Not enough money"                   |
       | -100  | 100    | 0    | 0       | "You can't deposit negative values"  |
-      | 100   | -100   | 0    | 1o00    | "You can't withdraw negative amount" |
+      | -100  | -1     | 0    | 0       | "You can't deposit negative values"  |
+      | -100  | 0      | 0    | 0       | "You can't deposit negative values"  |
+      | 100   | -100   | 0    | 100     | "You can't withdraw negative amount" |

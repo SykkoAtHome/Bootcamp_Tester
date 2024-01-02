@@ -13,6 +13,7 @@ public class WalletSteps {
     private final Wallet wallet = new Wallet();
     private final CashSlot cashSlot = new CashSlot();
 
+
     @Given("I have deposited {int} in my wallet")
     public void i_have_deposited_in_my_wallet(Integer int1) {
         wallet.deposit(int1);
@@ -38,6 +39,5 @@ public class WalletSteps {
     @And("I should get a {string} what is happening")
     public void i_should_get_a_what_is_happening(String string) {
         assertEquals(string, wallet.getWalletMassage());
-
     }
 }

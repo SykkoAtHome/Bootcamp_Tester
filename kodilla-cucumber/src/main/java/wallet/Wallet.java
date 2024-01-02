@@ -2,7 +2,7 @@ package wallet;
 
 public class Wallet {
     private int balance = 0;
-    private String massage;
+    private String massage = "";
     private int cashToDispense = 0;
 
     public Wallet() {
